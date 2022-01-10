@@ -9,10 +9,12 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link" href="<?= BASE_PATH ?>?hal=newhome">
+
+                            <a class="nav-link" href="<?= BASE_PATH ?>?hal=pelanggan/daftar">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                New Home
+                                Kelola Pelanggan
                             </a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

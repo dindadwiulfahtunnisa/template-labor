@@ -9,15 +9,17 @@
         include "layout/navbar.php";
         include "layout/sidebar.php";
 
-        if($halaman == "home"){} else if($halaman == "newhome"){
-        include "pages/newhome.php";
+        if($halaman == "home"){
             include "pages/home.php";
-        } else if($halaman == "newhome"){
-        include "pages/newhome.php";
         } else if($halaman == "pelanggan/daftar"){
-        include "pages/pelanggan/daftar.php";
+            include "pages/pelanggan/daftar.php";
         } else if($halaman == "pelanggan/tambah"){
-        include "pages/pelanggan/tambah.php";}
+            include "pages/pelanggan/tambah.php";
+        } else if($halaman == "pelanggan/edit"){
+            include "pages/pelanggan/edit.php";
+        } else if($halaman == "pelanggan/hapus"){
+             include "pages/pelanggan/hapus.php";
+        }
 
         include "layout/footer.php";
         include "layout/bottom.php";
