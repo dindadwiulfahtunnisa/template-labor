@@ -8,14 +8,14 @@ $query_pelanggan = mysqli_query($koneksi, "SELECT * FROM pelanggan WHERE kode_pe
 $pelanggan = mysqli_fetch_assoc($query_pelanggan);
 
 if (isset($_POST['submit'])) {
-    $nama = $_POST['nama'];
+    $nama_pel = $_POST['nama_pel'];
     $alamat = $_POST['alamat'];
     $kota = $_POST['kota'];
 
-    if (!$nama || !$alamat || !$kota) {
+    if (!$nama_pel || !$alamat || !$kota) {
         $alert_error = "Isi Seluruh Form!";
     } else {
-        $query_simpan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pel='$nama', alamat='$alamat', kota='$kota' WHERE kode_pel='$_GET[kode_pel]'");
+        $query_simpan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pel='$nama_pel', alamat='$alamat', kota='$kota' WHERE kode_pel='$_GET[kode_pel]'");
 
         if ($query_simpan) {
             $alert_success = "Data Berhasil di Edit";
@@ -50,12 +50,12 @@ if (isset($_POST['submit'])) {
                         ?>
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="nama">Nama Pelanggan</label>
-                                <input type="text" name="nama" id="nama" class="form-control" value="<?= $pelanggan['nama_pel'] ?>">
+                                <label for="nama_pel">Nama Pelanggan</label>
+                                <input type="text" name="nama_pel" id="nama_pel" class="form-control" value="<?= $pelanggan['nama_pel'] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" name="alamat" id="alamat" class="form-control value=" <?= $pelanggan['alamat'] ?>">
+                                <input type="text" name="alamat" id="alamat" class="form-control" value=" <?= $pelanggan['alamat'] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="kota">Kota</label>
