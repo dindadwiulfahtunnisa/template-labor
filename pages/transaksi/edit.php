@@ -4,7 +4,7 @@ if (!isset($_GET['no_faktur'])) {
     die();
 }
 
-$query_transaksi = mysqli_query($koneksi, "SEtransaksiOM transaksi WHERE no_faktur='$_GET[no_faktur]'");
+$query_transaksi = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE no_faktur='$_GET[no_faktur]'");
 $transaksi = mysqli_fetch_assoc($query_transaksi);
 
 if (isset($_POST['submit'])) {
@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $merk = $_POST['tgl_faktur'];
     $harga = $_POST['kode_pel'];
 
-    if (!$kode || !$merk || !$harga || !$stok) {
+    if (!$kode || !$merk || !$harga) {
         $alert_error = "Isi Seluruh Form!";
     } else {
         $query_simpan = mysqli_query($koneksi, "UPDATE transaksi SET no_faktur='$no', tgl_faktur='$tgl', kode_pel='$kode'");
@@ -50,19 +50,19 @@ if (isset($_POST['submit'])) {
                         ?>
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="kode">No  Faktur</label>
-                                <input type="text" name="kode" id="kode" class="form-control" value="<?= $kendaraan['kode_kendaraan'] ?>">
+                                <label for="no_faktur">No  Faktur</label>
+                                <input type="text" name="no_faktur" id="no_faktur" class="form-control" value="<?= $transaksi['no_faktur'] ?>">
                             </div>
                             <div class="form-group">
-                                <label for="merk">Tanggal Faktur</label>
-                                <input type="text" name="merk" id="merk" class="form-control value=" <?= $kendaraan['merk_kendaraan'] ?>">
+                                <label for="tgl_faktur">Tanggal Faktur</label>
+                                <input type="text" name="tgl_faktur" id="tgl_faktur" class="form-control" value=" <?= $transaksi['tgl_faktur'] ?>">
                             </div>
                             <div class="form-group">
-                                <label for="harga">Kode Pelanggan</label>
-                                <input type="text" name="harga" id="harga" class="form-control" value="<?= $kendaraan['harga_kendaraan'] ?>">
+                                <label for="kode_pelanggan">Kode Pelanggan</label>
+                                <input type="text" name="kode_pelanggan" id="kode_pelanggan" class="form-control" value="<?= $transaksi['kode_pelanggan'] ?>">
                             </div>
                             <br>
-                            <a href="?hal=kendaraan/daftar" class="btn btn-secondary">Kembali</a>
+                            <a href="?hal=transaksi/daftar" class="btn btn-secondary">Kembali</a>
                             <button type="submit" name="submit" class="btn btn-primary float-sm-end">Ubah</button>
                         </form>
                     </div>

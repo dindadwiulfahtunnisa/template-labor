@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
         $query_last_ken = mysqli_query($koneksi, "SELECT kode_kendaraan FROM kendaraan ORDER BY kode_kendaraan DESC LIMIT 1");
         $row_last_ken = mysqli_num_rows($query_last_ken);
         $fetch_last_ken = mysqli_fetch_assoc($query_last_ken);
-        $last_kode_ken = ($row_last_ken > 0) ? $fetch_last_ken['kode_kendaraan'] : 'HP00';
+        $last_kode_ken = ($row_last_ken > 0) ? $fetch_last_ken['kode_kendaraan'] : 'P_0000';
 
         $number = (int) substr($last_kode_ken, 2);
         $new_kode_ken = substr($last_kode_ken, 0, 2) . str_pad($number + 1, 4, 0, STR_PAD_LEFT);
@@ -46,15 +46,15 @@ if (isset($_POST['submit'])) {
                         ?>
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="nama">Merk Kendaraan</label>
+                                <label for="merk_kendaraan">Merk Kendaraan</label>
                                 <input type="text" name="merk_kendaraan" id="merk_kendaraan" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="harga">Harga Kendaraan</label>
+                                <label for="harga_kendaraan">Harga Kendaraan</label>
                                 <input type="text" name="harga_kendaraan" id="harga_kendaraan" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="harga">Stok Kendaraan</label>
+                                <label for="stok_kendaraan">Stok Kendaraan</label>
                                 <input type="text" name="stok_kendaraan" id="stok_kendaraan" class="form-control">
                             </div>
                             <br>

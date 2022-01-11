@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['kode_kendaran'])) {
-    header("location: " . BASE_PATH . "?hal=pendaraan/daftar");
+    header("location: " . BASE_PATH . "?hal=kendaraan/daftar");
     die();
 }
 

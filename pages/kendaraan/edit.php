@@ -8,15 +8,15 @@ $query_pelanggan = mysqli_query($koneksi, "SELECT * FROM kendaraan WHERE kode_ke
 $pelanggan = mysqli_fetch_assoc($query_pelanggan);
 
 if (isset($_POST['submit'])) {
-    $kode = $_POST['kode_kendaraan'];
+    $kode_kendaraan = $_POST['kode_kendaraan'];
     $merk = $_POST['merk_kendaraan'];
     $harga = $_POST['harga_kendaraan'];
     $stok = $_POST['stok_kendaraan'];
 
-    if (!$kode || !$merk || !$harga || !$stok) {
+    if (!$kode_kendaraan || !$merk || !$harga || !$stok) {
         $alert_error = "Isi Seluruh Form!";
     } else {
-        $query_simpan = mysqli_query($koneksi, "UPDATE kendaraan SET kode_kendaraan='$kode', merk_kendaraan='$merk', harga_kendaraan='$harga', stok_kendaraan ='$stok' WHERE kode_kendaraan='$_GET[kode_kendaraan]'");
+        $query_simpan = mysqli_query($koneksi, "UPDATE kendaraan SET kode_kendaraan='$kode_kendaraan', merk_kendaraan='$merk', harga_kendaraan='$harga', stok_kendaraan ='$stok' WHERE kode_kendaraan='$_GET[kode_kendaraan]'");
 
         if ($query_simpan) {
             $alert_success = "Data Berhasil di Edit";
@@ -51,12 +51,12 @@ if (isset($_POST['submit'])) {
                         ?>
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="kode">Kode Kendaraan</label>
-                                <input type="text" name="kode" id="kode" class="form-control" value="<?= $kendaraan['kode_kendaraan'] ?>">
+                                <label for="kode_kendaraan">Kode Kendaraan</label>
+                                <input type="text" name="kode_kendaraan" id="kode_kendaraan" class="form-control" value="<?= $kendaraan['kode_kendaraan'] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="merk">Merk Kendaraan</label>
-                                <input type="text" name="merk" id="merk" class="form-control value=" <?= $kendaraan['merk_kendaraan'] ?>">
+                                <input type="text" name="merk" id="merk" class="form-control" value=" <?= $kendaraan['merk_kendaraan'] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="harga">Harga Kendaraan</label>

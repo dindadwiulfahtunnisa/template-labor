@@ -18,6 +18,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kelola Kendaraan
                             </a>
+                            <a class="nav-link" href="<?= BASE_PATH ?>?hal=transaksi/daftar">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Kelola Transaksi
+                            </a>
                                 
                         </div>
                     </div>

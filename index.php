@@ -36,6 +36,16 @@
             include "pages/kendaraan/hapus.php";
         }
         
+        // Logic Transaksi
+        else if($halaman == "transaksi/daftar"){
+            include "pages/transaksi/daftar.php";
+        } else if($halaman == "transaksi/tambah"){
+            include "pages/transaksi/tambah.php";
+        } else if($halaman == "transaksi/edit"){
+            include "pages/transaksi/edit.php";
+        } else if($halaman == "transaksi/hapus"){
+            include "pages/transaksi/hapus.php";
+        }
         include "layout/footer.php";
         include "layout/bottom.php";
     } else {

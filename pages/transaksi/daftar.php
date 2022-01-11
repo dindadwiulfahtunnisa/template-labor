@@ -7,7 +7,7 @@ if (isset($_GET['msg'])) {
     <div class="container-fluid px-4">
         <h1 class="mt-4">Transaksi</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Transaksi</li>
+            <li class="breadcrumb-item active">Daftar Transaksi</li>
         </ol>
         <div class="row">
             <div class="col-md-12">
@@ -24,16 +24,16 @@ if (isset($_GET['msg'])) {
                             </thead>
                             <tbody>
                                 <?php
-                                $daftar_kendaraan = mysqli_query($koneksi, "SELECT * FROM transaksi");
+                                $daftar_transaksi = mysqli_query($koneksi, "SELECT * FROM transaksi");
 
-                                while ($data = mysqli_fetch_assoc($daftar_kendaraan)) { ?>
+                                while ($data = mysqli_fetch_assoc($daftar_transaksi)) { ?>
                                     <tr>
                                         <td><?= $data['no_faktur']; ?></td>
                                         <td><?= $data['tgl_faktur']; ?></td>
                                         <td><?= $data['kode_pel']; ?></td>
                                         <td>
-                                            <a href="<?= BASE_PATH . '?hal=transaksi/edit&kode_kendaraan=' . $data['kode_kendaraan'] ?>" class="btn btn-warning">Edit</a>
-                                            <a href="<?= BASE_PATH . '?hal=transaksi/hapus&kode_kendaraan=' . $data['kode_kendaraan'] ?>" class="btn btn-danger">Hapus</a>
+                                            <a href="<?= BASE_PATH . '?hal=transaksi/edit&kode_transaksi=' . $data['no_faktur'] ?>" class="btn btn-warning">Edit</a>
+                                            <a href="<?= BASE_PATH . '?hal=transaksi/hapus&kode_transaksi=' . $data['no_faktur'] ?>" class="btn btn-danger">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

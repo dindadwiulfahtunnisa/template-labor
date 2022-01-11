@@ -1,19 +1,19 @@
 <?php
-if (!isset($_GET['kode_kendaran'])) {
-    header("location: " . BASE_PATH . "?hal=pendaraan/daftar");
+if (!isset($_GET['mo_faktur'])) {
+    header("location: " . BASE_PATH . "?hal=transaksi/daftar");
     die();
 }
 
-$query_kendaraan = mysqli_query($koneksi, "SELECT * FROM kendaraan WHERE kode_pel='$_GET[kode_pel]'");
+$query_kendaraan = mysqli_query($koneksi, "SELECT * FROM transaksi WHERE no_faktur='$_GET[no_faktur]'");
 $row_kendaraan = mysqli_num_rows($query_kendaraan);
 
-if ($row_kendaraan > 0) {
-    $hapus = mysqli_query($koneksi, "DELETE FROM kendaraan WHERE kode_kendaraan='$_GET[kode_kendaraan]'");
+if ($row_transaksi > 0) {
+    $hapus = mysqli_query($koneksi, "DELETE FROM transaksi WHERE no_faktur='$_GET[no_faktur]'");
     if ($hapus) {
-        header("location: " . BASE_PATH . "?hal=kendaraan/daftar&msg=Data Berhasil Terhapus");
+        header("location: " . BASE_PATH . "?hal=transaksi/daftar&msg=Data Berhasil Terhapus");
         die();
     } else {
-        header("location: " . BASE_PATH . "?hal=kendaraan/daftar&msg=Data Tidak Terhapus");
+        header("location: " . BASE_PATH . "?hal=transaksi/daftar&msg=Data Tidak Terhapus");
         die();
     }
 }
