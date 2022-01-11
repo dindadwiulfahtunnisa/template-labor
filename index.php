@@ -9,18 +9,33 @@
         include "layout/navbar.php";
         include "layout/sidebar.php";
 
+       
         if($halaman == "home"){
             include "pages/home.php";
-        } else if($halaman == "pelanggan/daftar"){
+        }
+        
+        // Logic Pelanggan
+        else if($halaman == "pelanggan/daftar"){
             include "pages/pelanggan/daftar.php";
         } else if($halaman == "pelanggan/tambah"){
             include "pages/pelanggan/tambah.php";
         } else if($halaman == "pelanggan/edit"){
             include "pages/pelanggan/edit.php";
         } else if($halaman == "pelanggan/hapus"){
-             include "pages/pelanggan/hapus.php";
+            include "pages/pelanggan/hapus.php";
         }
 
+        // Logic Kendaraan
+        else if($halaman == "kendaraan/daftar"){
+            include "pages/kendaraan/daftar.php";
+        } else if($halaman == "kendaraan/tambah"){
+            include "pages/kendaraan/tambah.php";
+        } else if($halaman == "kendaraan/edit"){
+            include "pages/kendaraan/edit.php";
+        } else if($halaman == "kendaraan/hapus"){
+            include "pages/kendaraan/hapus.php";
+        }
+        
         include "layout/footer.php";
         include "layout/bottom.php";
     } else {

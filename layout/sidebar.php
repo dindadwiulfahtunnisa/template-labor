@@ -14,7 +14,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kelola Pelanggan
                             </a>
-
+                            <a class="nav-link" href="<?= BASE_PATH ?>?hal=kendaraan/daftar">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Kelola Kendaraan
+                            </a>
+                                
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
