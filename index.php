@@ -14,6 +14,18 @@
             include "pages/home.php";
         }
         
+        // Logic Pegawai
+        else if($halaman == "pegawai/daftar"){
+            include "pages/pegawai/daftar.php";
+        } else if($halaman == "pegawai/tambah"){
+            include "pages/pegawai/tambah.php";
+        } else if($halaman == "pegawai/edit"){
+            include "pages/pegawai/edit.php";
+        } else if($halaman == "pegawai/hapus"){
+            include "pages/pegawai/hapus.php";
+        }
+
+
         // Logic Pelanggan
         else if($halaman == "pelanggan/daftar"){
             include "pages/pelanggan/daftar.php";
