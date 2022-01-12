@@ -14,6 +14,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kelola Pegawai
                             </a>
+                            <a class="nav-link" href="<?= BASE_PATH ?>?hal=absensi/daftar">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Absensi Pegawai
+                            </a>
                             <a class="nav-link" href="<?= BASE_PATH ?>?hal=pelanggan/daftar">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kelola Pelanggan

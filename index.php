@@ -25,6 +25,16 @@
             include "pages/pegawai/hapus.php";
         }
 
+        // Logic Pelanggan
+        else if($halaman == "absensi/daftar"){
+            include "pages/absensi/daftar.php";
+        } else if($halaman == "absensi/tambah"){
+            include "pages/absensi/tambah.php";
+        } else if($halaman == "absensi/edit"){
+            include "pages/absensi/edit.php";
+        } else if($halaman == "absensi/hapus"){
+            include "pages/absensi/hapus.php";
+        }
 
         // Logic Pelanggan
         else if($halaman == "pelanggan/daftar"){
@@ -61,5 +71,5 @@
         include "layout/footer.php";
         include "layout/bottom.php";
     } else {
-        echo "Halaman tidak ditemukan";
+        header("location: ?hal=home");
     }

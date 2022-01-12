@@ -5,11 +5,11 @@ if (isset($_POST['submit'])) {
     $alamat = $_POST['alamat'];
     $jabatan = $_POST['jabatan'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $nohp = $_POST['nphp'];
+    $nohp = $_POST['nohp'];
     $tgl_lahir = $_POST['tgl_lahir'];
     $lama_kerja = $_POST['lama_kerja'];
 
-    if (!$id_pegawai || !$nama || !$alamat || !$jabatan || !$jenias_kelamin || !$nohp || !$tgl_lahir || !$lama_kerja) {
+    if (!$id_pegawai || !$nama || !$alamat || !$jabatan || !$jenis_kelamin || !$nohp || !$tgl_lahir || !$lama_kerja) {
         $alert_error = "Isi Seluruh Form!";
     } else {
         $query_last_pel = mysqli_query($koneksi, "SELECT id_pegawai FROM pegawai ORDER BY id_pegawai DESC LIMIT 1");
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Pwgawai</h1>
+        <h1 class="mt-4">Daftar Pegawai</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Daftar Pegawai</li>
         </ol>

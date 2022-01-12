@@ -5,7 +5,7 @@ if (!isset($_GET['id_pegawai'])) {
 }
 
 $query_pelanggan = mysqli_query($koneksi, "SELECT * FROM pegawai WHERE id_pegawai='$_GET[id_pegawai]'");
-$pelanggan = mysqli_fetch_assoc($query_pelanggan);
+$pelanggan = mysqli_fetch_assoc($query_pegawai);
 
 if (isset($_POST['submit'])) {
     $id_pegawai = $_POST['id_pegawai'];
